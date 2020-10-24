@@ -16,6 +16,9 @@ namespace HashTable
             hash.Add("5", "be");
             hash.GetFrequency("not");
             hash.GetFrequency("1");
+
+            Console.WriteLine("\n");
+            hash.displayFrequencyAllWordsInList();
             Console.ReadKey();
         }
     }

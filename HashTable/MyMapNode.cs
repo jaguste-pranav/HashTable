@@ -20,7 +20,6 @@ namespace HashTable
         {
             public k Key { get; set; }
             public v Value { get; set; }
-
         }
 
         protected int GetArrayPosition(K key)
@@ -81,7 +80,7 @@ namespace HashTable
                 linkedList.Remove(foundItem);
             }
         }
-        public void GetFrequency(V value)
+        public int GetFrequency(V value)
         {
             int frequency = 0;
             foreach (LinkedList<KeyValue<K, V>> list in items)
@@ -96,7 +95,24 @@ namespace HashTable
                         frequency++;
                 }
             }
-            Console.WriteLine("Frequency of {0} is {1}", value, frequency);
+            Console.WriteLine("Value: {0} \t Frequency: {1}", value, frequency);
+            return frequency;
+        }
+
+        public void displayFrequencyAllWordsInList()
+        {
+            foreach (LinkedList<KeyValue<K, V>> list in items)
+            {
+                if (list == null)
+                    continue;
+                foreach (KeyValue<K, V> obj in list)
+                {
+                    if (obj.Equals(null))
+                        continue;
+                    else
+                        GetFrequency(obj.Value);
+                }
+            }
         }
     }
 }
