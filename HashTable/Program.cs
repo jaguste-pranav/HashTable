@@ -19,6 +19,11 @@ namespace HashTable
 
             Console.WriteLine("\n");
             hash.displayFrequencyAllWordsInList();
+            hash.Remove("1");
+
+            Console.WriteLine("After removing: \n");
+            hash.displayFrequencyAllWordsInList();
+
             Console.ReadKey();
         }
     }
